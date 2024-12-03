@@ -1,0 +1,36 @@
+
+###
+
+GET http://localhost:4000/posts
+
+###
+
+GET http://localhost:4000/posts?sender=Eden2
+
+###
+
+GET http://localhost:4000/posts/673a20dba19f0255c37151d8
+
+###
+
+POST http://localhost:4000/posts
+Content-Type: application/json
+
+{
+    "sender": "Eden2",
+    "title": "My First Post",
+    "content": "This is my first post"
+}
+
+###
+
+PUT http://localhost:4000/posts/673a20dba19f0255c37151d8
+Content-Type: application/json
+
+{
+    "sender": "Eden",
+    "title": "My Second Post",
+    "content": "This is my second post"
+}
+
+
