@@ -2,10 +2,10 @@ const commentModel = require("../models/comments_model");
 const postModel = require("../models/posts_model");
 
 const getAllComments = async (req, res) => {
-    const postFilter = req.query.post;
+    const postFilter = req.query.postId;
     try {
         if (postFilter) {
-            const comments = await commentModel.find({ post: postFilter });
+            const comments = await commentModel.find({ postId: postFilter });
             res.status(200).send(comments);
         } else {
             const comments = await commentModel.find();
@@ -72,5 +72,6 @@ const deleteComment = async (req, res) => {
         res.status(400).send({ message: "Error deleting comment", error });
     }
 };
+
 
 module.exports = {getAllComments, getCommentById, addNewComment, updateComment, deleteComment};
