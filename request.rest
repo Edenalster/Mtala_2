@@ -9,7 +9,7 @@ GET http://localhost:4000/posts?sender=Eden2
 
 ###
 
-GET http://localhost:4000/posts/673a20dba19f0255c37151d8
+GET http://localhost:4000/posts/674f2e9e2e5029fe9e1c5090
 
 ###
 
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:4000/posts/673a20dba19f0255c37151d8
+PUT http://localhost:4000/posts/674ef6d5be19c75779e7c610
 Content-Type: application/json
 
 {
@@ -33,4 +33,39 @@ Content-Type: application/json
     "content": "This is my second post"
 }
 
+###
+//all comments
+GET http://localhost:4000/comments
 
+###
+//all comments for a post
+GET http://localhost:4000/comments?postId=674f35a7068ce58ca42a98c2
+
+###
+//comment by id
+GET http://localhost:4000/comments/674f358e068ce58ca42a98be
+
+###
+
+POST http://localhost:4000/comments
+Content-Type: application/json
+
+{
+  "comment": "This is a new comment",
+  "author": "Yoav",
+  "postId": "674f35a7068ce58ca42a98c2"
+}
+
+### 
+//Update a comment
+PUT http://localhost:4000/comments/674f358e068ce58ca42a98be
+Content-Type: application/json
+
+{
+  "comment": "Updated comment",
+  "author": "Yoav"
+}
+
+### 
+//Delete a comment
+DELETE http://localhost:4000/comments/674f358e068ce58ca42a98be
