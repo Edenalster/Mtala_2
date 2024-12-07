@@ -1,30 +1,30 @@
 
 ###
-
+// Get all posts
 GET http://localhost:4000/posts
 
 ###
-
+// Get post by sender
 GET http://localhost:4000/posts?sender=Eden2
 
 ###
-
-GET http://localhost:4000/posts/674f2e9e2e5029fe9e1c5090
+// Get post by id
+GET http://localhost:4000/posts/67519863c75b61c38670381d
 
 ###
-
+// Create a new post
 POST http://localhost:4000/posts
 Content-Type: application/json
 
 {
-    "sender": "Eden2",
+    "sender": "Eden",
     "title": "My First Post",
     "content": "This is my first post"
 }
 
 ###
-
-PUT http://localhost:4000/posts/674ef6d5be19c75779e7c610
+// Update a post
+PUT http://localhost:4000/posts/67519863c75b61c38670381d
 Content-Type: application/json
 
 {
@@ -32,6 +32,10 @@ Content-Type: application/json
     "title": "My Second Post",
     "content": "This is my second post"
 }
+
+###
+// Delete a post
+DELETE http://localhost:4000/posts/6751c9fd29b8f72bfff00059
 
 ###
 //all comments
@@ -45,18 +49,18 @@ Content-Type: application/json
 
 {
   "comment": "This is a new comment",
-  "author": "Yoav",
-  "postId": "674f35a7068ce58ca42a98c2"
+  "author": "Eden",
+  "postId": "6754237446da0f9a20100dd9"
 }
 
 ###
 //get comment by pot id
-GET http://localhost:4000/comments?postId=674f2e9e2e5029fe9e1c5090
+GET http://localhost:4000/comments?postId=67519863c75b61c38670381d
 
 
 ### 
 //Update a comment
-PUT http://localhost:4000/comments/674f358e068ce58ca42a98be
+PUT http://localhost:4000/comments/67519940c75b61c38670383a
 Content-Type: application/json
 
 {
@@ -66,4 +70,4 @@ Content-Type: application/json
 
 ### 
 //Delete a comment
-DELETE http://localhost:4000/comments/674f358e068ce58ca42a98be
+DELETE http://localhost:4000/comments/67519944c75b61c38670383d
